@@ -1,0 +1,28 @@
+replicaCount: 1
+
+deployment: 
+  name: "mydeploy"
+  label: "mydeploy"
+
+image:
+  repository: gcr.io/gcp-project-356819/my-python
+  tag: "latest"
+  pullPolicy: Always
+
+service:
+  type: NodePort
+  port: 80
+  port2: 6379
+
+resources: 
+  containers:
+    image: gcr.io/gcp-project-356819/my-python
+    name:  my-python-code
+    
+
+autoscaling:
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+ 

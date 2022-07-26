@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: python-redis
+  labels:
+    app: python-redis
+
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      protocol: TCP
+      nodePort: 30022
+  
+  selector:
+    app: {{ .Values.deployment.name }}
