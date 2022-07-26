@@ -15,7 +15,7 @@ $ helm create myfile
 ### build using this helm command:
 $ helm install [any-name] .
 ```
-![Alt text](./img3.jpg)
+![My image](./img3.png)
 ```bash
 amir@amir-Alienware-x15-R1:~/helm/myfile$ kubectl get deployments
 NAME                                  READY   UP-TO-DATE   AVAILABLE   AGE
@@ -98,7 +98,7 @@ status:
 ```bash
 ### 5) Now you can access it through your browser using [minikubeIP:nodePort]
 ```
-![Alt text](./img1.jpg)
+![My image](./img1.png)
 
 ```bash
 ### 6) Now you need the username and password of your jenkins container
@@ -110,7 +110,7 @@ $ helm show values jenkins/jenkins | grep adminUser
 $ echo $(kubectl get secret --namespace default my-jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode)
 xlhjlr7bWHA9kUwJlpV44R
 ```
-![Alt text](./img2.jpg)
+![My image](./img2.png)
 
 
 ### Another way:
